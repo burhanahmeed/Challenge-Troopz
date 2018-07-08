@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+	h4 Football Team
+	hr
+	div(style="padding: 10px; margin-bottom: 20px;")
+		label(style="font-weight: bold; margin-right: 10px") Your Team :  
+		img(src=logo, style="height:20px; margin-right:5px")
+		span=favorite
+	h5(style="text-align: center") Choose Your Favorite Team
+	.row
+		each k in klub
+			.col-md-12
+				form(method="POST", action="/football/set")
+					.box-football
+						input(type="hidden", name="_csrf", value=_csrf)
+						input(type="hidden", name="vlogo", value=k.kp_logo)
+						img(src=k.kp_logo, style="height: 40px")
+						button(type="submit" name="vklub", value=k.kp_nama ,href="",style="font-size: 25px; outline: none; background: no-repeat; border: none;")= k.kp_nama

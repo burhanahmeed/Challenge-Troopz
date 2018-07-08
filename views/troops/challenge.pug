@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+	h4 Challenges
+	hr
+	.row
+		for i in chal
+			.col-md-12
+				.box-football(style="font-size: 20px")
+					.info dari fans 
+						=i.klub
+					div
+						=i.tantangan
+					form(action="/challenge/vote", method="POST")
+						input(type="hidden", name="_csrf", value=_csrf)
+						input(type="hidden", name="cid", value=i.id)
+						div(style="display: block; text-align: right; font-size: 13px")
+							span=i.status 
+							span  | 
+							button(type="submit") Upvote this challege  
+							span  | 
+							span=i.vote

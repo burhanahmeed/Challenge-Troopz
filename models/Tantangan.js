@@ -1,0 +1,15 @@
+const bcrypt = require('bcrypt-nodejs');
+const crypto = require('crypto');
+const mongoose = require('mongoose');
+
+const tantanganSchema = new mongoose.Schema({
+  psid: Number,
+  klub: String, 
+  tantangan: String, 
+  status: String,
+  vote: Number
+}, { timestamps: true });
+
+const Tantangan = mongoose.model('Tantangan', tantanganSchema);
+
+module.exports = Tantangan;

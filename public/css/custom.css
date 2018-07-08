@@ -1,0 +1,29 @@
+.box-dashboard {
+	margin: 0 auto;
+	padding: 30% 20px;
+	text-align: center;
+	/*height: 300px;
+	width: 70%;*/
+}
+.box-click {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding: 100px;
+	width: 300px;
+	border-radius: 30px;
+}
+
+.box-football {
+	width: 80%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding: 20px;
+	margin: 0 auto;
+	text-align: center;
+	cursor: pointer;
+	font-size: 30px;
+}
+
+.info {
+	display: block;
+	text-align: left;
+	font-size: 12px;
+}
