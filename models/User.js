@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt-nodejs');
 const crypto = require('crypto');
-const mongoose = require('mongodb').MongoClient;
+const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },

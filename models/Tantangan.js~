@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt-nodejs');
 const crypto = require('crypto');
-const mongoose = require('mongoose');
+const mongoose = require('mongodb').MongoClient;
 
 const tantanganSchema = new mongoose.Schema({
   psid: Number,
