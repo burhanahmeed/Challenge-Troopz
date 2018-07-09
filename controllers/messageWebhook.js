@@ -17,8 +17,10 @@ exports.index = (req, res) => {
 	var id = webhook.sender.id;
 	if (webhook.message) {
 		var text = webhook.message.text;
+		console.log('variabel text : '+text)
 	} else {
 		var text = webhook.postback.payload;
+		console.log('payback text : '+text)
 	}
 	if (text == 'GET_STARTED') {
 		const response = buttonTemplate('Halo selamat datang di ChallengeTroopz, ketik /info untuk melihat informasi')
@@ -35,21 +37,26 @@ exports.index = (req, res) => {
 			messageHandler(tem, id, function(result) {
 				console.log('Async : ' + result)
 			})
-		})
-		return true
-	}
-
-	if (text == '/done') {
-		klubModelMongo.getlisttantang().then((respon)=>{
-			klubModelMongo.complete({id: respon[0].id}).then((result) => {
-				const response = buttonTemplate('Selamat! Misi berhasil, terus selesaikan misi dan bantu sepakbola indonesia menjadi lebih baik :v')
-				messageHandler(response, id, function(result) {
-					console.log('Async : ' + result)
-				})
+		}).catch((err)=> {
+			var tem = {text: "Belum ada tantangan atau terjadi kesalahan"}
+			messageHandler(tem, id, function(result) {
+				console.log('Async : ' + result)
 			})
 		})
 		return true
 	}
+
+	// if (text == '/done') {
+	// 	klubModelMongo.getlisttantang().then((respon)=>{
+	// 		klubModelMongo.complete({id: respon[0].id}).then((result) => {
+	// 			const response = buttonTemplate('Selamat! Misi berhasil, terus selesaikan misi dan bantu sepakbola indonesia menjadi lebih baik :v')
+	// 			messageHandler(response, id, function(result) {
+	// 				console.log('Async : ' + result)
+	// 			})
+	// 		})
+	// 	})
+	// 	return true
+	// }
 
 	if (text == '/justvote') {
 		klubModelMongo.getlisttantang().then((respon)=>{
