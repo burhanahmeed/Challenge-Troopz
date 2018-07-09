@@ -46,17 +46,17 @@ exports.index = (req, res) => {
 		return true
 	}
 
-	// if (text == '/done') {
-	// 	klubModelMongo.getlisttantang().then((respon)=>{
-	// 		klubModelMongo.complete({id: respon[0].id}).then((result) => {
-	// 			const response = buttonTemplate('Selamat! Misi berhasil, terus selesaikan misi dan bantu sepakbola indonesia menjadi lebih baik :v')
-	// 			messageHandler(response, id, function(result) {
-	// 				console.log('Async : ' + result)
-	// 			})
-	// 		})
-	// 	})
-	// 	return true
-	// }
+	if (text == '/done') {
+		klubModelMongo.getlisttantang().then((respon)=>{
+			klubModelMongo.complete({id: respon[0].id}).then((result) => {
+				const response = buttonTemplate('Selamat! Misi berhasil, terus selesaikan misi dan bantu sepakbola indonesia menjadi lebih baik :v')
+				messageHandler(response, id, function(result) {
+					console.log('Async : ' + result)
+				})
+			})
+		})
+		return true
+	}
 
 	if (text == '/justvote') {
 		klubModelMongo.getlisttantang().then((respon)=>{
