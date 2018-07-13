@@ -1,5 +1,6 @@
 const User = require('../models/User')
 const Tantangan = require('../models/Tantangan')
+const Participant = require('../models/Participant')
 
 module.exports = {
 	setKlub: (params) => {
@@ -42,6 +43,19 @@ module.exports = {
 			})
 		})
 	},
+	getlisttantangincompleted: () => {
+		return new Promise((resolve, reject) => {
+			Tantangan.find({status: 'incomplete'})
+			.sort({vote:-1})
+			.exec((err, res) => {
+				if (err) {
+					reject(err)
+					return
+				}
+				resolve(res)
+			})
+		})
+	},
 	upvote: (params) => {
 		return new Promise((resolve, reject) => {
 			Tantangan.findById(params.id, (err, user) => {
@@ -69,6 +83,29 @@ module.exports = {
 						resolve(res)
 					}
 				})
+			})
+		})
+	},
+	saveParticipant: (params) => {
+		return new Promise((resolve, reject) => {
+			Participant.update({psid: params.psid}, params, {upsert: true}, (err, res) => {
+				if (err) {
+					reject(err)
+				} else {
+					resolve(res)
+				}
+			})
+		})
+	},
+	getlistparticipant: () => {
+		return new Promise((resolve, reject) => {
+			Participant.find()
+			.exec((err, res) => {
+				if (err) {
+					reject(err)
+					return
+				}
+				resolve(res)
 			})
 		})
 	}

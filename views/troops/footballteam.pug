@@ -9,11 +9,38 @@ block content
 		span=favorite
 	h5(style="text-align: center") Choose Your Favorite Team
 	.row
-		each k in klub
-			.col-md-12
-				form(method="POST", action="/football/set")
-					.box-football
-						input(type="hidden", name="_csrf", value=_csrf)
-						input(type="hidden", name="vlogo", value=k.kp_logo)
-						img(src=k.kp_logo, style="height: 40px")
-						button(type="submit" name="vklub", value=k.kp_nama ,href="",style="font-size: 25px; outline: none; background: no-repeat; border: none;")= k.kp_nama
+		.col-md-12
+			form(method="POST", action="/football/set")
+				.box-football
+					input(type="hidden", name="_csrf", value=_csrf)
+					input(type="hidden", name="vlogo", value='https://3.bp.blogspot.com/-l-N66_EKPYU/WC1p5Xh3bfI/AAAAAAAAKUU/xEMk4yLioygUSmPBx3QqmkoJ6trBLSEsACLcB/s1600/bitebrands%2B-%2Blogo%2Bklub%2Bsepakbola%2Bliga%2Bindonesia%2B02.jpg')
+					img(src='https://3.bp.blogspot.com/-l-N66_EKPYU/WC1p5Xh3bfI/AAAAAAAAKUU/xEMk4yLioygUSmPBx3QqmkoJ6trBLSEsACLcB/s1600/bitebrands%2B-%2Blogo%2Bklub%2Bsepakbola%2Bliga%2Bindonesia%2B02.jpg', style="height: 40px")
+					button(type="submit" name="vklub", value='AREMA INDOENSIA' ,href="",style="font-size: 25px; outline: none; background: no-repeat; border: none;") AREMA INDOENSIA
+		.col-md-12
+			form(method="POST", action="/football/set")
+				.box-football
+					input(type="hidden", name="_csrf", value=_csrf)
+					input(type="hidden", name="vlogo", value='https://2.bp.blogspot.com/-obinRZq8okY/WC1p89Yz_KI/AAAAAAAAKVM/Q0_9qMK7H_o4Gx1C1e6-chR68BRfdATYgCLcB/s1600/bitebrands%2B-%2Blogo%2Bklub%2Bsepakbola%2Bliga%2Bindonesia%2B15.jpg')
+					img(src='https://2.bp.blogspot.com/-obinRZq8okY/WC1p89Yz_KI/AAAAAAAAKVM/Q0_9qMK7H_o4Gx1C1e6-chR68BRfdATYgCLcB/s1600/bitebrands%2B-%2Blogo%2Bklub%2Bsepakbola%2Bliga%2Bindonesia%2B15.jpg', style="height: 40px")
+					button(type="submit" name="vklub", value='PERSEBAYA' ,href="",style="font-size: 25px; outline: none; background: no-repeat; border: none;") PERSEBAYA
+		.col-md-12
+			form(method="POST", action="/football/set")
+				.box-football
+					input(type="hidden", name="_csrf", value=_csrf)
+					input(type="hidden", name="vlogo", value='https://3.bp.blogspot.com/-HrVv5T5eVzE/WC1p7WVwwcI/AAAAAAAAKU4/WLPhuURosU0y9qd1oeVOMizqGmIZ6jDFgCLcB/s1600/bitebrands%2B-%2Blogo%2Bklub%2Bsepakbola%2Bliga%2Bindonesia%2B10.jpg')
+					img(src='https://3.bp.blogspot.com/-HrVv5T5eVzE/WC1p7WVwwcI/AAAAAAAAKU4/WLPhuURosU0y9qd1oeVOMizqGmIZ6jDFgCLcB/s1600/bitebrands%2B-%2Blogo%2Bklub%2Bsepakbola%2Bliga%2Bindonesia%2B10.jpg', style="height: 40px")
+					button(type="submit" name="vklub", value='PERSIPURA' ,href="",style="font-size: 25px; outline: none; background: no-repeat; border: none;") PERSIPURA
+		.col-md-12
+			form(method="POST", action="/football/set")
+				.box-football
+					input(type="hidden", name="_csrf", value=_csrf)
+					input(type="hidden", name="vlogo", value='https://1.bp.blogspot.com/-mEN6ZXqHca0/WC1p7Ioxk8I/AAAAAAAAKU0/pWhpFRds62c_53QgrqP5z23M26JpeeNeQCLcB/s1600/bitebrands%2B-%2Blogo%2Bklub%2Bsepakbola%2Bliga%2Bindonesia%2B09.jpg')
+					img(src='https://1.bp.blogspot.com/-mEN6ZXqHca0/WC1p7Ioxk8I/AAAAAAAAKU0/pWhpFRds62c_53QgrqP5z23M26JpeeNeQCLcB/s1600/bitebrands%2B-%2Blogo%2Bklub%2Bsepakbola%2Bliga%2Bindonesia%2B09.jpg', style="height: 40px")
+					button(type="submit" name="vklub", value='PERSIB' ,href="",style="font-size: 25px; outline: none; background: no-repeat; border: none;") PERSIB
+		.col-md-12
+			form(method="POST", action="/football/set")
+				.box-football
+					input(type="hidden", name="_csrf", value=_csrf)
+					input(type="hidden", name="vlogo", value='https://4.bp.blogspot.com/-uL5Ou7to6nQ/WC1p6Ta4WGI/AAAAAAAAKUo/vQFy7MBTdW0P581C1QwX7818_tx9cMeGwCLcB/s1600/bitebrands%2B-%2Blogo%2Bklub%2Bsepakbola%2Bliga%2Bindonesia%2B06.jpg')
+					img(src='https://4.bp.blogspot.com/-uL5Ou7to6nQ/WC1p6Ta4WGI/AAAAAAAAKUo/vQFy7MBTdW0P581C1QwX7818_tx9cMeGwCLcB/s1600/bitebrands%2B-%2Blogo%2Bklub%2Bsepakbola%2Bliga%2Bindonesia%2B06.jpg', style="height: 40px")
+					button(type="submit" name="vklub", value='PERSELA' ,href="",style="font-size: 25px; outline: none; background: no-repeat; border: none;") PERSELA

@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+	h4 Challenge Participants
+	hr
+	.row
+		each p in participant
+			.col-md-12
+				.box-football
+					img(src=p.img, style="height: 40px")
+					span(style="font-size: 25px; outline: none;border: none;")= p.fname 

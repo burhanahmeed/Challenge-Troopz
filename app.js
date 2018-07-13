@@ -161,6 +161,7 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 app.get('/start', isLoggedIn, startController.index)
 app.get('/football', isLoggedIn, startController.football)
 app.get('/challenge', isLoggedIn, startController.challenge)
+app.get('/participant', isLoggedIn, startController.participant)
 app.post('/football/set', isLoggedIn, startController.setKlub)
 app.post('/challenge/vote', isLoggedIn, startController.voteChal)
 

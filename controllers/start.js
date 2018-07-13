@@ -1,4 +1,4 @@
-const klubModel = require('../models/bola')
+// const klubModel = require('../models/bola')
 const klubModelMongo = require('../models/bolaMongo')
 
 exports.index = (req, res) => {
@@ -8,17 +8,36 @@ exports.index = (req, res) => {
 }
 
 exports.football = (req, res) => {
-	klubModel.get().then((result) => {
-		console.log(req.user)
-		res.render('troops/footballteam', {
-			title: 'Choose Football Team',
-			klub: result,
-			favorite: req.user.profile.klub,
-			logo: req.user.profile.logo
+	// klubModel.get().then((result) => {
+	// 	console.log(req.user)
+	// 	res.render('troops/footballteam', {
+	// 		title: 'Choose Football Team',
+	// 		klub: result,
+	// 		favorite: req.user.profile.klub,
+	// 		logo: req.user.profile.logo
+	// 	})
+	// }).catch((err) => {
+	// 	res.render('troops/footballteam', {
+	// 		title: 'Error'
+	// 	})
+	// })
+	res.render('troops/footballteam', {
+		title: 'Choose Football Team',		
+		favorite: req.user.profile.klub,
+		logo: req.user.profile.logo
+	})
+}
+
+exports.participant = (req, res) => {
+	klubModelMongo.getlistparticipant().then((result) => {
+		res.render('troops/participant', {
+			title: 'View Participant',		
+			participant: result
 		})
 	}).catch((err) => {
-		res.render('troops/footballteam', {
-			title: 'Error'
+		res.render('troops/participant', {
+			title: 'View Participant',		
+			participant: err
 		})
 	})
 }

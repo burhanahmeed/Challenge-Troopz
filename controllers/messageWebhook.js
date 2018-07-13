@@ -3,7 +3,8 @@ var handler = require('./handler'),
 	messageHandler = handler.messageHandler,
 	speechHandler = handler.speechHandler,
 	buttonTemplate = handler.buttonTemplate,
-	lihattantangTemplate = handler.lihattantangTemplate
+	lihattantangTemplate = handler.lihattantangTemplate,
+	getProfile = handler.getProfile
 
 const klubModelMongo = require('../models/bolaMongo')
 
@@ -24,15 +25,30 @@ exports.index = (req, res) => {
 	}
 	if (text == 'GET_STARTED') {
 		const response = buttonTemplate('Halo selamat datang di ChallengeTroopz, ketik /info untuk melihat informasi')
-		messageHandler(response, id, function(result) {
-			console.log('Async : ' + result)
+		getProfile(id, function(profile) {
+			var data = {
+				psid: id,
+				img: profile.profile_pic,
+				fname: profile.first_name,
+				lname: profile.last_name
+			}
+			klubModelMongo.saveParticipant(data).then((result_db) => {
+				messageHandler(response, id, function(result) {
+					console.log('Async : ' + result)
+				})
+				res.send(req.body);
+			}).catch((err) => {
+				messageHandler(response, id, function(result) {
+					console.log('Async : ' + result)
+				})
+				res.send(req.body);
+			})
 		})
-		res.send(req.body);
 		return true
 	}
 
 	if (text == '/lihattantangan') {
-		klubModelMongo.getlisttantang().then((respon)=>{
+		klubModelMongo.getlisttantangincompleted().then((respon)=>{
 			var tem = lihattantangTemplate(respon[0].tantangan)
 			messageHandler(tem, id, function(result) {
 				console.log('Async : ' + result)

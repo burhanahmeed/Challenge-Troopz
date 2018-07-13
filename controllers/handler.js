@@ -96,3 +96,16 @@ var data = {
     }
   })
 }
+exports.getProfile = (id, cb) => {
+  var reqObj = {
+    url: 'https://graph.facebook.com/v2.6/'+id+'?access_token='+token,
+    method: 'get'
+  }
+  request(reqObj, function(error, response){
+    if (error) {
+      cb(false)
+    } else {
+      cb(response)
+    }
+  })
+}
