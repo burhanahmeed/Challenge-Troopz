@@ -101,11 +101,12 @@ exports.getProfile = (id, cb) => {
     url: 'https://graph.facebook.com/v2.6/'+id+'?access_token='+token,
     method: 'get'
   }
-  request(reqObj, function(error, response){
+  request(reqObj, function(error, response, body){
+    // console.log(body)
     if (error) {
       cb(false)
     } else {
-      cb(response)
+      cb(body)
     }
   })
 }

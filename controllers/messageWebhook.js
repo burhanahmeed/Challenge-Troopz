@@ -26,11 +26,13 @@ exports.index = (req, res) => {
 	if (text == 'GET_STARTED') {
 		const response = buttonTemplate('Halo selamat datang di ChallengeTroopz, ketik /info untuk melihat informasi')
 		getProfile(id, function(profile) {
+			// console.log(JSON.parse(profile))
+			var jsonObj = JSON.parse(profile)
 			var data = {
 				psid: id,
-				img: profile.profile_pic,
-				fname: profile.first_name,
-				lname: profile.last_name
+				img: jsonObj.profile_pic,
+				fname: jsonObj.first_name,
+				lname: jsonObj.last_name
 			}
 			klubModelMongo.saveParticipant(data).then((result_db) => {
 				messageHandler(response, id, function(result) {
