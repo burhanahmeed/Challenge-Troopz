@@ -2,30 +2,31 @@ extends layout
 
 block content
   if !user
-    h1 Hackathon Starter
-    p.lead A boilerplate for Node.js web applications.
+    h1 ChallengeTroopz
+    p.lead Challenge Your Football Friends! Make Indonesian Football Better
     hr
     .row
       .col-md-6
-        h2 Heading
-        p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-        p
-          a.btn.btn-raised(href='#', role='button') View details »
+        h4 Inspiration
+        p It has been a few years since there has been a significant development in Indonesian football. As a developing country, Indonesia is full of problems of poverty, hygiene, and poor facilities. However, Indonesia has the power of enthusiasm in football. With so many football fan communities, it can be an advantage for developing countries when all the football communities work together to create challenges each other that will make this country a better one.
+        h4 What it does
+        p There are many football communities and bad rivalry in Indonesian football fans. ChallengeTroopz invite you to join us together to make challenge for other football communities that will make this country better. You can make challenge for other football club fans via FB messenger, can upvote which challenge need to be completed by others via FB messenger and you can do and complete challenge from your football fans friends. There is also a dashboard to see the challenge and the participants.
+        h4 Tech Stacks
+        p NodeJS (Express), MongoDB, API.AI, FB Messenger API, FB Graph API
       .col-md-6
-        h2 Heading
-        p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+        h4 Demo Dashboard
         p
-          a.btn.btn-raised(href='#', role='button') View details »
-      .col-md-6
-        h2 Heading
-        p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+          span click here 
+          a(href="/login") Dashboard
+        p Username : burhan@email.com
+        p password: 123456789
+
+        h4 FB Bot Demo
         p
-          a.btn.btn-raised(href='#', role='button') View details »
-      .col-md-6
-        h2 Heading
-        p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-        p
-          a.btn.btn-raised(href='#', role='button') View details »
+          | open FB, search ChallengeTroopz page then get started with messenger 
+        p FB username : 0895377266358
+        p FB password : challengetroopz
+
   else 
     h4 Challenge Troops
     hr
