@@ -53,6 +53,7 @@ exports.index = (req, res) => {
 				res.send(req.body);
 			})
 		})
+		res.send(req.body)
 		return true
 // 		break;
 	}
@@ -71,6 +72,7 @@ exports.index = (req, res) => {
 				})
 			})   
 		}
+		res.send(req.body)
 		return false
 // 		break;
 	}
@@ -84,6 +86,7 @@ exports.index = (req, res) => {
 				})
 			})
 		})
+		res.send(req.body)
 		return true
 	}
 
@@ -95,6 +98,7 @@ exports.index = (req, res) => {
 				})
 			})
 		})
+		res.send(req.body)
 		return true
 	}
 
