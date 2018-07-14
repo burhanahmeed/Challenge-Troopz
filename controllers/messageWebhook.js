@@ -52,7 +52,8 @@ exports.index = (req, res) => {
 				res.send(req.body);
 			})
 		})
-		return true
+// 		return true
+		break;
 	}
 
 	if (text == '/lihattantangan') {
@@ -67,7 +68,8 @@ exports.index = (req, res) => {
 				console.log('Async : ' + result)
 			})
 		})
-		return true
+// 		return true
+		break;
 	}
 
 	if (text == '/done') {
