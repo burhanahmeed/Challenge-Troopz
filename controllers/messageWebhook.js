@@ -16,10 +16,10 @@ exports.index = (req, res) => {
 	console.log(req.body.entry[0].messaging[0])
 	const webhook = req.body.entry[0].messaging[0];
 	var id = webhook.sender.id;
-	if (webhook.message === null || webhook.message === undefined) {
+	if (webhook.message.text === null || webhook.message.text === undefined) {
 	    return true
 	}
-	if (webhook.postback === null || webhook.postback === undefined) {
+	if (webhook.postback.payload === null || webhook.postback.payload === undefined) {
 	    return true
 	}
 	if (webhook.message) {
