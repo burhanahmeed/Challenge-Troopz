@@ -65,7 +65,7 @@ exports.index = (req, res) => {
 	}
 
 	if (text == '/done') {
-		klubModelMongo.getlisttantang().then((respon)=>{
+		klubModelMongo.getlisttantangincompleted().then((respon)=>{
 			klubModelMongo.complete({id: respon[0].id}).then((result) => {
 				const response = buttonTemplate('Selamat! Misi berhasil, terus selesaikan misi dan bantu sepakbola indonesia menjadi lebih baik :v')
 				messageHandler(response, id, function(result) {
@@ -77,7 +77,7 @@ exports.index = (req, res) => {
 	}
 
 	if (text == '/justvote') {
-		klubModelMongo.getlisttantang().then((respon)=>{
+		klubModelMongo.getlisttantangincompleted().then((respon)=>{
 			klubModelMongo.upvote({id: respon[0].id}).then((result) => {
 				messageHandler({text: "Upvote berhasil"}, id, function(result) {
 					console.log('Async : ' + result)
