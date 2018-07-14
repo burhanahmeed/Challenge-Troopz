@@ -53,7 +53,6 @@ exports.index = (req, res) => {
 				res.send(req.body);
 			})
 		})
-		res.send(req.body)
 		return true
 // 		break;
 	}
