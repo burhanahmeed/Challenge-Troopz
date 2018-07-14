@@ -67,7 +67,7 @@ exports.index = (req, res) => {
 				console.log('Async : ' + result)
 			})
 		})
-		return false
+		return true
 	}
 
 	if (text == '/done') {
@@ -79,7 +79,7 @@ exports.index = (req, res) => {
 				})
 			})
 		})
-		return false
+		return true
 	}
 
 	if (text == '/justvote') {
@@ -90,7 +90,7 @@ exports.index = (req, res) => {
 				})
 			})
 		})
-		return false
+		return true
 	}
 
 	speechHandler(text, id, function(speech) {
