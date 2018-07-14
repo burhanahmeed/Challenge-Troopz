@@ -17,10 +17,11 @@ exports.index = (req, res) => {
 	const webhook = req.body.entry[0].messaging[0];
 	var id = webhook.sender.id;
 	if (webhook.devlivery != null) {
-	    return true
+	    console.log('MSG DELIVERY')
+	    return false
 	}
 	if (webhook.read != null) {
-	    return true
+	    return false
 	}
 	if (webhook.message) {
 		var text = webhook.message.text;
@@ -68,7 +69,7 @@ exports.index = (req, res) => {
 				console.log('Async : ' + result)
 			})
 		})
-		return
+		return false
 // 		break;
 	}
 
