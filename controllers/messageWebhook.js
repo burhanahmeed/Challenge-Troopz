@@ -58,17 +58,19 @@ exports.index = (req, res) => {
 	}
 
 	if (text == '/lihattantangan') {
-		klubModelMongo.getlisttantangincompleted().then((respon)=>{
-			var tem = lihattantangTemplate(respon[0].tantangan)
-			messageHandler(tem, id, function(result) {
-				console.log('Async : ' + result)
-			})
-		}).catch((err)=> {
-			var tem = {text: "Belum ada tantangan atau terjadi kesalahan"}
-			messageHandler(tem, id, function(result) {
-				console.log('Async : ' + result)
-			})
-		})
+		if (!webhook.delivery) {
+		 	klubModelMongo.getlisttantangincompleted().then((respon)=>{
+				var tem = lihattantangTemplate(respon[0].tantangan)
+				messageHandler(tem, id, function(result) {
+					console.log('Async : ' + result)
+				})
+			}).catch((err)=> {
+				var tem = {text: "Belum ada tantangan atau terjadi kesalahan"}
+				messageHandler(tem, id, function(result) {
+					console.log('Async : ' + result)
+				})
+			})   
+		}
 		return false
 // 		break;
 	}
